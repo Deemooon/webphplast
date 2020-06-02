@@ -32,7 +32,7 @@
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
-        <p class="login-box-msg">Войдите для просмотра расписания занятий</p>
+        <p class="login-box-msg">Войдите для просмотра расписания занятий<?=$message;?></p>
 
         <form action="auth.php" method="post">
             <div class="form-group has-feedback">

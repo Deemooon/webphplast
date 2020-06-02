@@ -1,8 +1,7 @@
 <?php
 
+class User extends Table {
 
-class User extends Table
-{
     public $user_id = 0;
     public $lastname = '';
     public $firstname = '';
@@ -10,9 +9,10 @@ class User extends Table
     public $login = '';
     public $pass = '';
     public $gender_id = 0;
-    public $birthday = '';
+    public $birthday = null;
     public $role_id = 0;
     public $active = 1;
+
 
     public function validate()
     {
@@ -25,7 +25,5 @@ class User extends Table
             return true;
         }
         return false;
-        //return false;
     }
 }
-?>
