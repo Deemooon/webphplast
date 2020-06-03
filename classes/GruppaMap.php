@@ -45,5 +45,22 @@ return true;
 }
         return false;
     }
-
+    public function findAll($ofset=0,$limit=30){
+        $res = $this->db->query("SELECT gruppa.gruppa_id,gruppa.name, special.name AS special, gruppa.date_begin,gruppa.date_end"
+            . " FROM gruppa INNER JOIN special ON gruppa.special_id=special.special_id LIMIT $ofset,
+$limit");
+        return $res->fetchAll(PDO::FETCH_OBJ);
+    }
+    public function count(){
+        $res = $this->db->query("SELECT COUNT(*) AS cnt FROM gruppa");
+        return $res->fetch(PDO::FETCH_OBJ)->cnt;
+    }
+    public function findViewById($id=null){
+        if ($id) {
+$res = $this->db->query("SELECT gruppa.gruppa_id,gruppa.name, special.name AS special, gruppa.date_begin,gruppa.date_end"
+    . " FROM gruppa INNER JOIN special ON gruppa.special_id=special.special_id WHERE gruppa_id = $id");
+return $res->fetch(PDO::FETCH_OBJ);
+}
+        return false;
+    }
 }

@@ -20,5 +20,12 @@
                 <a href="list-student.php"><i class="fafa-users"></i><span>Студенты</span></a>
             </li>
         </ul>
+        <li class="header">Справочники</li>
+
+        <li <?=($_SERVER['PHP_SELF']=='/list-gruppa.php')?'class="active"':'';?>>
+
+            <a href="list-gruppa.php"><i class="fa fa-users"></i><span>Группы</span></a>
+
+        </li>
     </section>
 </aside>
