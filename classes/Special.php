@@ -10,6 +10,11 @@ class Special extends Table {
 
     public function validate()
     {
+        if (!empty($this->name) &&
+            !empty($this->active) &&
+            !empty($this->otdel_id)){
+            return true;
+        }
         return false;
     }
 }

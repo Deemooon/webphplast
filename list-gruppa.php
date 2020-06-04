@@ -52,14 +52,14 @@ require_once 'template/header.php';
 
                                 . '<a href="add-gruppa.php?id='.$gruppa->gruppa_id.'"><i class="fa fa-pencil"></i></a></td>';
 
-echo '<td>'.$gruppa->special.'</td>';
+                                echo '<td>'.$gruppa->special.'</td>';
 
-echo '<td>'.date("d.m.Y",
-        strtotime($gruppa->date_begin)).'</td>';
-echo '<td>'.date("d.m.Y",
-        strtotime($gruppa->date_end)).'</td>';
-echo '</tr>';
-}
+                                echo '<td>'.date("d.m.Y",
+                                        strtotime($gruppa->date_begin)).'</td>';
+                                echo '<td>'.date("d.m.Y",
+                                        strtotime($gruppa->date_end)).'</td>';
+                                echo '</tr>';
+                                }
                             ?>
                             </tbody>
                         </table>
