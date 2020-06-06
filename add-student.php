@@ -37,7 +37,7 @@ require_once 'template/header.php';
             </div>
             <div class="form-group">
                 <label>Номер зачетной книжки</label>
-                <input type="text" class="form-control" name="num_zach" required="required" value="<?=$student->num_zach;?>">
+                <?= Helper::printSelectOptions($student->gruppa_id, (new StudentMap())->a());?>
             </div>
             <div class="form-group">
                 <label>Заблокировать</label>

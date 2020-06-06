@@ -57,9 +57,11 @@ require_once 'template/header.php';
                                 echo '<td>'.$student->gender.'</td>';
 
                                 echo '<td>'.$student->birthday.'</td>';
+                                echo '<td>'.$student->num_zach.'</td>';
                                 echo '<td>'.$student->otdel.'</td>';
                                 echo '<td>'.$student->role.'</td>';
-                                echo '<td>'.$student->nomer_zach.'</td>';
+
+
                                 echo '</tr>';
 
                             }

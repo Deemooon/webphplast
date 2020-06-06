@@ -124,15 +124,28 @@ schedule_id=$id") == 1) {
 
     public function findByGruppaId($gruppaId, $dayId){
         $res = $this->db->query("SELECT
-            schedule.schedule_id,lesson_num.name AS lesson_num,subject.name AS subject,classroom.name AS classroom, Concat(user.lastname,' ', user.firstname,' ',IfNull(user.patronymic, ' ')) FROM lesson_plan "
-            . "INNER JOIN schedule ON lesson_plan.lesson_plan_id=schedule.lesson_plan_id "
-            ."INNER JOIN teacher ON lesson_plan.user_id=teacher.user_id "
-            ."INNER JOIN user ON teacher.user_id =user.user_id "
-            . "INNER JOIN subject ON lesson_plan.subject_id=subject.subject_id INNER JOIN "
-            . "lesson_num ON schedule.lesson_num_id=lesson_num.lesson_num_id INNER JOIN "
-            . "classroom ON schedule.classroom_id=classroom.classroom_id WHERE "
-            . "lesson_plan.gruppa_id=$gruppaId AND schedule.day_id=$dayId"
-            . " ORDER BY schedule.lesson_num_id");
+    sc.schedule_id,
+    ln.name AS lesson_num,
+    su.name AS subject,
+    c.name AS classroom,
+    CONCAT(u.lastname, ' ', u.firstname, ' ', IfNull(u.patronymic, '')) AS fio
+FROM lesson_plan AS lp
+INNER JOIN schedule AS sc
+    ON lp.lesson_plan_id = sc.lesson_plan_id
+INNER JOIN teacher
+    ON lp.user_id = teacher.user_id
+INNER JOIN user AS u
+    ON teacher.user_id = u.user_id
+INNER JOIN subject AS su
+    ON lp.subject_id = su.subject_id
+INNER JOIN lesson_num AS ln
+    ON sc.lesson_num_id = ln.lesson_num_id
+INNER JOIN classroom AS c
+    ON sc.classroom_id = c.classroom_id
+WHERE
+    lp.gruppa_id = $gruppaId AND
+    sc.day_id = $dayId
+ORDER BY sc.lesson_num_id");
         return $res->fetchAll(PDO::FETCH_ASSOC);
     }
 }
