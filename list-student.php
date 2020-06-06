@@ -41,8 +41,6 @@ require_once 'template/header.php';
                                 <th>Ф.И.О</th>
                                 <th>Пол</th>
                                 <th>Дата рождения</th>
-                                <th>Номер зачетки</th>
-                                <th>Отделение</th>
                                 <th>Роль</th>
                             </tr>
                             </thead>
