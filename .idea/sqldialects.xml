@@ -3,6 +3,7 @@
   <component name="SqlDialectMappings">
     <file url="file://$PROJECT_DIR$/classes/GruppaMap.php" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/classes/LessonPlanMap.php" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/classes/ScheduleMap.php" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/classes/UserMap.php" dialect="GenericSQL" />
   </component>
 </project>
